@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Next - Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🎯 Career Guidance Results</h2>
+
+    <h3>Student: {{ student.get('name', 'Unknown') }}</h3>
+    <p><strong>Aptitude Marks:</strong> {{ student.get('aptitude_marks', 'N/A') }}</p>
+
+    <h3>AI Career Suggestions:</h3>
+
+    {% if ai.stream %}
+      <p><strong>Stream:</strong> {{ ai.stream }}</p>
+    {% endif %}
+
+    {% if ai.career_path %}
+      <p><strong>Career Path:</strong> {{ ai.career_path }}</p>
+    {% endif %}
+
+    {% if ai.recommended_courses %}
+      <h4>Recommended Courses:</h4>
+      <ul>
+        {% for course in ai.recommended_courses %}
+          <li>{{ course }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ai.nearby_colleges %}
+      <h4>Nearby Colleges:</h4>
+      <ul>
+        {% for college in ai.nearby_colleges %}
+          <li>
+            {{ college.college }} ({{ college.district }}) - Fees: {{ college.approx_fees }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ai.job_opportunities %}
+      <h4>Job Opportunities:</h4>
+      <ul>
+        {% for job in ai.job_opportunities %}
+          <li>{{ job }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ai.entrance_exams %}
+      <h4>Entrance Exams:</h4>
+      <ul>
+        {% for exam in ai.entrance_exams %}
+          <li>{{ exam }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ai.higher_studies %}
+      <h4>Higher Studies:</h4>
+      <ul>
+        {% for hs in ai.higher_studies %}
+          <li>{{ hs }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ai.scholarships %}
+      <h4>Scholarships:</h4>
+      <ul>
+        {% for s in ai.scholarships %}
+          <li>{{ s }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ai.salary_range %}
+      <p><strong>Salary Range:</strong> {{ ai.salary_range }}</p>
+    {% endif %}
+
+    {% if ai.motivation %}
+      <h4>Motivational Message:</h4>
+      <p>{{ ai.motivation }}</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('quiz_page') }}">🔄 Take Quiz Again</a>
+  </div>
+</body>
+</html>

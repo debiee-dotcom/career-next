@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Next - Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>📝 Career Quiz</h2>
+    <form method="POST">
+
+      <!-- Section 1: Aptitude -->
+      <h3>Section 1: Aptitude</h3>
+
+      <label>1. If a train runs at 60 km/h, how long will it take to cover 180 km?</label><br>
+      <select name="q1" required>
+        <option>2 hours</option>
+        <option>3 hours</option>
+        <option>4 hours</option>
+        <option>5 hours</option>
+      </select><br><br>
+
+      <label>2. Find the next number in the series: 2, 6, 12, 20, ?</label><br>
+      <select name="q2" required>
+        <option>28</option>
+        <option>30</option>
+        <option>32</option>
+        <option>26</option>
+      </select><br><br>
+
+      <label>3. A clock shows 3:15. What is the angle between the hour and minute hands?</label><br>
+      <select name="q3" required>
+        <option>0°</option>
+        <option>30°</option>
+        <option>45°</option>
+        <option>90°</option>
+      </select><br><br>
+
+      <label>4. Which word does NOT belong in the group?</label><br>
+      <select name="q4" required>
+        <option>Dog</option>
+        <option>Cat</option>
+        <option>Tiger</option>
+        <option>Rose</option>
+      </select><br><br>
+
+      <label>5. If 5 workers finish a job in 20 days, how many days will 10 workers take?</label><br>
+      <select name="q5" required>
+        <option>10 days</option>
+        <option>20 days</option>
+        <option>15 days</option>
+        <option>5 days</option>
+      </select><br><br>
+
+      <label>6. Arrange letters to form a meaningful word: “RAEHT”</label><br>
+      <select name="q6" required>
+        <option>Earth</option>
+        <option>Heart</option>
+        <option>Both (Earth & Heart)</option>
+        <option>None</option>
+      </select><br><br>
+
+      <!-- Section 2: Interests -->
+      <h3>Section 2: Interests</h3>
+
+      <label>Which subject do you enjoy the most?</label><br>
+      <select name="interests_subject" required>
+        <option>Mathematics/Physics</option>
+        <option>Biology</option>
+        <option>Commerce/Business</option>
+        <option>History/Literature</option>
+      </select><br><br>
+
+      <label>If you could choose a project, what would you prefer?</label><br>
+      <select name="interests_project" required>
+        <option>Building a mobile app</option>
+        <option>Studying plants/animals</option>
+        <option>Planning a business</option>
+        <option>Writing a story</option>
+      </select><br><br>
+
+      <label>Which activity excites you more?</label><br>
+      <select name="interests_activity" required>
+        <option>Solving puzzles/coding</option>
+        <option>Helping people in health/education</option>
+        <option>Managing money/selling products</option>
+        <option>Reading, drawing, debating</option>
+      </select><br><br>
+
+      <label>Which career sounds most exciting?</label><br>
+      <select name="interests_career" required>
+        <option>Engineer/Scientist</option>
+        <option>Doctor/Researcher</option>
+        <option>Accountant/Manager</option>
+        <option>Teacher/Journalist/IAS</option>
+      </select><br><br>
+
+      <label>In free time, you prefer:</label><br>
+      <select name="interests_freetime" required>
+        <option>Tech games, coding</option>
+        <option>Watching science/medical shows</option>
+        <option>Budgeting, planning finance</option>
+        <option>Reading novels, art</option>
+      </select><br><br>
+
+      <!-- Section 3: Personality -->
+      <h3>Section 3: Personality</h3>
+
+      <label>In a group project, what role do you usually take?</label><br>
+      <select name="personality_role" required>
+        <option>Problem solver</option>
+        <option>Caregiver/helper</option>
+        <option>Planner/organizer</option>
+        <option>Creative contributor</option>
+      </select><br><br>
+
+      <label>What motivates you most?</label><br>
+      <select name="personality_motivation" required>
+        <option>Solving tough problems</option>
+        <option>Helping people</option>
+        <option>Earning financial success</option>
+        <option>Expressing ideas creatively</option>
+      </select><br><br>
+
+      <label>Which quality best describes you?</label><br>
+      <select name="personality_quality" required>
+        <option>Analytical thinker</option>
+        <option>Compassionate</option>
+        <option>Organized</option>
+        <option>Creative</option>
+      </select><br><br>
+
+      <label>How do you prefer working?</label><br>
+      <select name="personality_workstyle" required>
+        <option>Alone, focused</option>
+        <option>With a team</option>
+        <option>Leading a group</option>
+        <option>Sharing ideas</option>
+      </select><br><br>
+
+      <label>Which of these inspires you more?</label><br>
+      <select name="personality_inspiration" required>
+        <option>ISRO/DRDO scientists</option>
+        <option>Doctors saving lives</option>
+        <option>Entrepreneurs like Ratan Tata</option>
+        <option>Writers/Leaders like Abdul Kalam</option>
+      </select><br><br>
+
+      <!-- Section 4: Academic & Future Plans -->
+      <h3>Section 4: Academic & Future Plans</h3>
+
+      <label>What was your 10th/12th % score?</label><br>
+      <select name="academic_score" required>
+        <option>&lt;60%</option>
+        <option>60–70%</option>
+        <option>70–80%</option>
+        <option>80%+</option>
+      </select><br><br>
+
+      <label>Which subject did you score highest in?</label><br>
+      <select name="academic_best_subject" required>
+        <option>Mathematics</option>
+        <option>Biology/Chemistry</option>
+        <option>Commerce/Accounts</option>
+        <option>Humanities/Language</option>
+      </select><br><br>
+
+      <label>After graduation, would you prefer?</label><br>
+      <select name="academic_future" required>
+        <option>Master’s/PhD</option>
+        <option>Professional courses (CA, MBA)</option>
+        <option>Government exams</option>
+        <option>Teaching/Creative fields</option>
+      </select><br><br>
+
+      <label>Which matters most in a career for you?</label><br>
+      <select name="academic_priority" required>
+        <option>Innovation/Problem-solving</option>
+        <option>Helping society</option>
+        <option>Financial growth</option>
+        <option>Creativity/Recognition</option>
+      </select><br><br>
+
+      <!-- Extra Questions -->
+      <h3>Additional Information</h3>
+
+      <label>What is your annual family income?</label><br>
+      <select name="annual_income" required>
+        <option>&lt; 2 Lakhs</option>
+        <option>2–5 Lakhs</option>
+        <option>5–10 Lakhs</option>
+        <option>10 Lakhs+</option>
+      </select><br><br>
+
+      <label>Which city do you live in?</label><br>
+      <input type="text" name="city" required><br><br>
+
+      <button type="submit">Submit Quiz ✅</button>
+    </form>
+  </div>
+</body>
+</html>
